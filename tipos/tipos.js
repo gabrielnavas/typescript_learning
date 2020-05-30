@@ -17,3 +17,12 @@ minhaIdade = 27; //tipo dinâmico
 console.log(typeof minhaIdade); // => number
 minhaIdade = 'gabriel';
 console.log(typeof minhaIdade); // => string
+// array
+var hobbies = ["Cozinhar", 1, true];
+console.log(typeof hobbies[0]); // => string
+console.log(typeof hobbies[1]); // => number 
+console.log(typeof hobbies[2]); // => boolean
+var hobbiesTipados = ["Cozinhar", "praticar esportes"];
+//hobbiesTipados.push(2); => error type
+console.log(typeof hobbiesTipados[0]); // => string
+console.log(typeof hobbiesTipados[1]); // => string 
