@@ -13,3 +13,6 @@ let idade = 27;
 idade = 27.5 //posso usar ponto flutuante
 
 
+// boolean
+let possuiHobbies = false;
+possuiHobbies = 1; // possuiHobbies é boolean, number não pode ser atribuido
