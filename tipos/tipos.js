@@ -28,7 +28,21 @@ console.log(typeof hobbiesTipados[0]); // => string
 console.log(typeof hobbiesTipados[1]); // => string 
 // tuplas => array com tipos previamente definidos
 //nesse caso, digo explicitamente que na variavel endereco eu quero uma string e um number
-var endereco = ["Av Principa", 99, true];
+var endereco = ["Av Principa", 99];
 console.log(typeof endereco[0]); // => string
 console.log(typeof endereco[1]); // => number
-console.log(typeof endereco[2]); // => error, o tamanho definido do array é 2, pois so tem [string e number]
+// console.log(typeof endereco[2]) // => error, o tamanho definido do array é 2, pois so tem [string e number]
+//enum
+var Cor;
+(function (Cor) {
+    Cor[Cor["Cinza"] = 0] = "Cinza";
+    Cor[Cor["Verde"] = 100] = "Verde";
+    Cor[Cor["Azul"] = 101] = "Azul";
+    Cor[Cor["Marron"] = 3] = "Marron";
+    Cor[Cor["Rosa"] = 500] = "Rosa";
+})(Cor || (Cor = {}));
+var minhaCor = Cor.Verde;
+console.log(minhaCor); // => 100
+console.log(Cor.Azul); // => 101
+console.log(Cor.Marron); // => 3
+console.log(Cor.Rosa); // => 500
