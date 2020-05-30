@@ -26,3 +26,9 @@ var hobbiesTipados = ["Cozinhar", "praticar esportes"];
 //hobbiesTipados.push(2); => error type
 console.log(typeof hobbiesTipados[0]); // => string
 console.log(typeof hobbiesTipados[1]); // => string 
+// tuplas => array com tipos previamente definidos
+//nesse caso, digo explicitamente que na variavel endereco eu quero uma string e um number
+var endereco = ["Av Principa", 99, true];
+console.log(typeof endereco[0]); // => string
+console.log(typeof endereco[1]); // => number
+console.log(typeof endereco[2]); // => error, o tamanho definido do array é 2, pois so tem [string e number]
