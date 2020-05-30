@@ -46,3 +46,8 @@ console.log(minhaCor); // => 100
 console.log(Cor.Azul); // => 101
 console.log(Cor.Marron); // => 3
 console.log(Cor.Rosa); // => 500
+// any
+var carro = 'BMW';
+console.log(carro); // => BMW
+carro = { marca: 'BMW', ano: 2015 };
+console.log(carro); // => {marca: BMW, ano: 2015}
