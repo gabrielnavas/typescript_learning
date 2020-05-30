@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "live-server"
+    "start:live-server": "live-server",
+    "start:tsc": "tsc -w"
+
   },
   "dependencies": {
     "live-server": "^1.2.1"
