@@ -17,4 +17,4 @@ class Singleton {
 
 // let e = new Singleton(); // Error: constructor of 'Singleton' is private.
 let v = Singleton.getInstance();
-console.log(v.ge tNum());
+// console.log(v.ge tNum());

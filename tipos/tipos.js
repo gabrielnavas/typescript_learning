@@ -81,3 +81,23 @@ var soma;
 soma = souUmaFuncao;
 var soma2;
 soma2 = souUmaFuncao;
+// objetos
+var usuario = {
+    nome: 'João',
+    idade: 26,
+};
+// usuario = {} tem que ser um objeto com os mesmo atributos e nome
+// usuario = {
+//     name: 'Maria',
+//     age: 31,
+// }
+//atribuição explícita
+var userTipado = {
+    nome: 'João',
+    idade: 24,
+};
+//agora eu posso mudar tranquilamente, desde que as chaves sejam as mesma.
+userTipado = {
+    nome: 'Gabriel',
+    idade: 21,
+};
