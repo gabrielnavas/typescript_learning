@@ -101,3 +101,37 @@ userTipado = {
     nome: 'Gabriel',
     idade: 21,
 };
+//Desafio
+/*
+    Criar um objeto funcionário com:
+        -- Array de strings com os nomes dos supervisores
+        -- Função de bater ponto que recebe a hora e retorna uma string
+            -> Ponto normal (<= 8)
+            -> Fora do horário (> 8)
+
+*/
+var funcionario = {
+    superVisores: ['Ana', 'Fernando'],
+    baterPonto: function (horario) {
+        if (horario <= 8) {
+            return 'Ponto normal';
+        }
+        return 'Fora do horário';
+    }
+};
+console.log(funcionario);
+console.log(funcionario.baterPonto(3));
+console.log(funcionario.baterPonto(9));
+// console.log(Funcionario); // Não é possível, type não é objeto, é tipo
+var f1 = {
+    superVisores: ['José', 'Roberto'],
+    baterPonto: function (h) {
+        if (h >= 10) {
+            return 'horário muito alto';
+        }
+        return 'horário muito baixo';
+    }
+};
+console.log(f1);
+console.log(f1.baterPonto(11));
+console.log(f1.baterPonto(5));

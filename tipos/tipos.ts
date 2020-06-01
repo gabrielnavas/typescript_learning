@@ -1,14 +1,14 @@
 
 //String
 
-let nome:string = "João"
+let nome: string = "João"
 console.log(nome)
 //nome = 28 => o tipo de nome é string
 
 
 
 //number
-let idade:number = 27;
+let idade: number = 27;
 //idade = 'ana' => o tipo de idade é number
 idade = 27.5 //posso usar ponto flutuante
 
@@ -58,7 +58,7 @@ console.log(typeof endereco[1]) // => number
 
 
 //enum
-enum Cor{
+enum Cor {
     Cinza, // => 0
     Verde = 100, // => 100
     Azul, // => 101
@@ -78,7 +78,7 @@ console.log(Cor.Rosa) // => 500
 let carro: any = 'BMW'
 console.log(carro) // => BMW
 
-carro = {marca: 'BMW', ano: 2015}
+carro = { marca: 'BMW', ano: 2015 }
 console.log(carro) // => {marca: BMW, ano: 2015}
 
 
@@ -106,15 +106,15 @@ console.log(multiplicar(2.0, 2))
 //funcao como tipo
 
 //declaração
-function souUmaFuncao(x: number, y:number): number{
-    return x+y
+function souUmaFuncao(x: number, y: number): number {
+    return x + y
 }
 
 //soma rece uma funcao que tem 2 param number e retorna um number
-let soma: (x: number, y:number) => number;
+let soma: (x: number, y: number) => number;
 soma = souUmaFuncao;
 
-let soma2: (x1: number, x2:number) => number;
+let soma2: (x1: number, x2: number) => number;
 soma2 = souUmaFuncao;
 
 
@@ -134,7 +134,7 @@ let usuario = {
 // }
 
 //atribuição explícita
-let userTipado: {nome: string, idade: number} = {
+let userTipado: { nome: string, idade: number } = {
     nome: 'João',
     idade: 24,
 }
@@ -144,3 +144,62 @@ userTipado = {
     nome: 'Gabriel',
     idade: 21,
 }
+
+
+//Desafio
+/*
+    Criar um objeto funcionário com:
+        -- Array de strings com os nomes dos supervisores
+        -- Função de bater ponto que recebe a hora e retorna uma string
+            -> Ponto normal (<= 8)
+            -> Fora do horário (> 8)
+
+*/
+
+let funcionario: { 
+    superVisores: string[], 
+    baterPonto: (horas: number) => string 
+} = {
+    superVisores: ['Ana', 'Fernando'],
+    baterPonto(horario: number): string {
+        if(horario <= 8) {
+            return 'Ponto normal'
+        }
+
+        return 'Fora do horário';
+    }
+}
+
+console.log(funcionario);
+console.log(funcionario.baterPonto(3));
+console.log(funcionario.baterPonto(9));
+
+// funcionario = {} // não é possível
+
+
+
+
+
+//Definindo Tipos já definidos sem classes
+type Funcionario = {
+    superVisores: string[],
+    baterPonto: (horas: number) => string,
+}
+
+// console.log(Funcionario); // Não é possível, type não é objeto, é tipo
+
+const f1: Funcionario = {
+    superVisores: ['José', 'Roberto'],
+    baterPonto: (h: number): string => {
+        if(h >= 10) {
+            return 'horário muito alto'
+        }
+
+        return 'horário muito baixo'
+    }
+}
+
+console.log(f1)
+console.log(f1.baterPonto(11));
+console.log(f1.baterPonto(5));
+
