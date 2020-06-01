@@ -7,6 +7,10 @@ console.log(nome);
 var idade = 27;
 //idade = 'ana' => o tipo de idade é number
 idade = 27.5; //posso usar ponto flutuante
+var decimal = 6;
+var hex = 0xf00d;
+var binary = 10;
+var octal = 484;
 // boolean
 var possuiHobbies = false;
 // possuiHobbies = 1; // possuiHobbies é boolean, number não pode ser atribuido
@@ -51,3 +55,29 @@ var carro = 'BMW';
 console.log(carro); // => BMW
 carro = { marca: 'BMW', ano: 2015 };
 console.log(carro); // => {marca: BMW, ano: 2015}
+// funções
+function retornaNome() {
+    // return idade; // error type, a função espera retornar uma tipo string
+    return nome;
+}
+console.log(retornaNome()); // => João
+function imprimeOlaMundo() {
+    console.log('Olá mundo');
+    // return 'olá mundo' // erro, void não retorna nada
+}
+imprimeOlaMundo();
+function multiplicar(numA, numB) {
+    return numA * numB;
+}
+console.log(multiplicar(2.11111111111111111111111111111111, 2));
+console.log(multiplicar(2.0, 2));
+//funcao como tipo
+//declaração
+function souUmaFuncao(x, y) {
+    return x + y;
+}
+//soma rece uma funcao que tem 2 param number e retorna um number
+var soma;
+soma = souUmaFuncao;
+var soma2;
+soma2 = souUmaFuncao;

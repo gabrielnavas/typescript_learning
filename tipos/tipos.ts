@@ -12,6 +12,11 @@ let idade:number = 27;
 //idade = 'ana' => o tipo de idade é number
 idade = 27.5 //posso usar ponto flutuante
 
+let decimal: number = 6
+let hex: number = 0xf00d
+let binary: number = 0b1010
+let octal: number = 0o744
+
 
 // boolean
 let possuiHobbies: boolean = false;
@@ -75,4 +80,40 @@ console.log(carro) // => BMW
 
 carro = {marca: 'BMW', ano: 2015}
 console.log(carro) // => {marca: BMW, ano: 2015}
+
+
+// funções
+function retornaNome(): string {
+    // return idade; // error type, a função espera retornar uma tipo string
+    return nome;
+}
+console.log(retornaNome()); // => João
+
+function imprimeOlaMundo(): void {
+    console.log('Olá mundo')
+    // return 'olá mundo' // erro, void não retorna nada
+}
+imprimeOlaMundo();
+
+
+function multiplicar(numA: number, numB: number): number {
+    return numA * numB;
+}
+console.log(multiplicar(2.11111111111111111111111111111111, 2))
+console.log(multiplicar(2.0, 2))
+
+
+//funcao como tipo
+
+//declaração
+function souUmaFuncao(x: number, y:number): number{
+    return x+y
+}
+
+//soma rece uma funcao que tem 2 param number e retorna um number
+let soma: (x: number, y:number) => number;
+soma = souUmaFuncao;
+
+let soma2: (x1: number, x2:number) => number;
+soma2 = souUmaFuncao;
 
