@@ -203,3 +203,13 @@ console.log(f1)
 console.log(f1.baterPonto(11));
 console.log(f1.baterPonto(5));
 
+
+
+
+
+//union type
+let nota: string | number;
+nota = 20;
+console.log(nota); 
+nota = '20'
+console.log(nota);

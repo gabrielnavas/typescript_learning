@@ -135,3 +135,9 @@ var f1 = {
 console.log(f1);
 console.log(f1.baterPonto(11));
 console.log(f1.baterPonto(5));
+//union type
+var nota;
+nota = 20;
+console.log(nota);
+nota = '20';
+console.log(nota);
