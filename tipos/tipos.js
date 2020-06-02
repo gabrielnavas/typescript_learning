@@ -141,3 +141,8 @@ nota = 20;
 console.log(nota);
 nota = '20';
 console.log(nota);
+//checando tipos manualmente
+var estoque = 22;
+if (typeof estoque === 'number') {
+    console.log('é number');
+}
