@@ -156,13 +156,13 @@ userTipado = {
 
 */
 
-let funcionario: { 
-    superVisores: string[], 
-    baterPonto: (horas: number) => string 
+let funcionario: {
+    superVisores: string[],
+    baterPonto: (horas: number) => string
 } = {
     superVisores: ['Ana', 'Fernando'],
     baterPonto(horario: number): string {
-        if(horario <= 8) {
+        if (horario <= 8) {
             return 'Ponto normal'
         }
 
@@ -191,7 +191,7 @@ type Funcionario = {
 const f1: Funcionario = {
     superVisores: ['José', 'Roberto'],
     baterPonto: (h: number): string => {
-        if(h >= 10) {
+        if (h >= 10) {
             return 'horário muito alto'
         }
 
@@ -210,7 +210,7 @@ console.log(f1.baterPonto(5));
 //union type
 let nota: string | number;
 nota = 20;
-console.log(nota); 
+console.log(nota);
 nota = '20'
 console.log(nota);
 
@@ -220,6 +220,30 @@ console.log(nota);
 
 let estoque = 22;
 
-if(typeof estoque === 'number') {
+if (typeof estoque === 'number') {
     console.log('é number');
 }
+
+
+//never
+function falha(error: string): never {
+    throw new Error(error);
+}
+
+function loopInfinito(error: string): never {
+    while (true) { }
+}
+
+const produto = {
+    nome: 'maça',
+    validar: function(nome: string) {
+        if(nome.trim().length === 0) {
+            falha('nome vazio')
+        }
+
+        this.nome = nome;
+    }
+}
+
+
+produto.validar('');

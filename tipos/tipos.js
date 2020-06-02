@@ -146,3 +146,20 @@ var estoque = 22;
 if (typeof estoque === 'number') {
     console.log('é number');
 }
+//never
+function falha(error) {
+    throw new Error(error);
+}
+function loopInfinito(error) {
+    while (true) { }
+}
+var produto = {
+    nome: 'maça',
+    validar: function (nome) {
+        if (nome.trim().length === 0) {
+            falha('nome vazio');
+        }
+        this.nome = nome;
+    }
+};
+produto.validar('');
