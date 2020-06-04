@@ -236,14 +236,15 @@ function loopInfinito(error: string): never {
 
 const produto = {
     nome: 'maça',
-    validar: function(nome: string) {
-        if(nome.trim().length === 0) {
+    preco: 4,
+    validar: function (nome: string) {
+        if (nome.trim().length === 0) {
             falha('nome vazio')
         }
-
-        this.nome = nome;
+        if (this.preco <= 0) {
+            falha('Preço inválido');
+        }
     }
 }
-
 
 produto.validar('');
