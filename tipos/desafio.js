@@ -1,0 +1,37 @@
+"use strict";
+/**
+ *
+ *
+ * transformar esse codigo em TS
+ 
+     let contaBancaria = {
+        saldo: 3456,
+        depositar(valor) {
+            this.saldo += valor
+        }
+    }
+     
+    let correntista = {
+        nome: 'Ana Silva',
+        contaBancaria: contaBancaria,
+        contatos: ['34567890', '98765432']
+    }
+     
+    correntista.contaBancaria.depositar(3000)
+    console.log(correntista)
+ 
+ */
+var contaBancaria = {
+    saldo: 3456,
+    depositar: function (valor) {
+        this.saldo += valor;
+    }
+};
+var correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '98765432']
+};
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);
+//# sourceMappingURL=desafio.js.map

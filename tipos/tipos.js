@@ -155,11 +155,31 @@ function loopInfinito(error) {
 }
 var produto = {
     nome: 'maça',
+    preco: 4,
     validar: function (nome) {
         if (nome.trim().length === 0) {
             falha('nome vazio');
         }
-        this.nome = nome;
+        if (this.preco <= 0) {
+            falha('Preço inválido');
+        }
     }
 };
 produto.validar('');
+//tipo null
+var altura = 12;
+/* se setar o strictNullChecks = false,
+poderia utilizar null em tipos nao null */
+// altura = null; // => não aceita
+var alturaOpcional = 12;
+alturaOpcional = null;
+var contato1 = {
+    nome: 'Fulano',
+    tel1: '213242152',
+    tel2: null,
+};
+var ApenasNulo = null; //apenas nulo (não faz sentido)
+var poderSerNulo = null; //atribuido tipo any
+poderSerNulo = 12; // type number
+poderSerNulo = 'abc'; // type string
+//# sourceMappingURL=tipos.js.map

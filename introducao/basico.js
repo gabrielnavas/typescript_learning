@@ -7,3 +7,4 @@
 */
 var str = 'Teste TS, oi!';
 console.log(str);
+//# sourceMappingURL=basico.js.map

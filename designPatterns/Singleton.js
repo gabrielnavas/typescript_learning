@@ -16,3 +16,4 @@ var Singleton = /** @class */ (function () {
 // let e = new Singleton(); // Error: constructor of 'Singleton' is private.
 var v = Singleton.getInstance();
 // console.log(v.ge tNum());
+//# sourceMappingURL=Singleton.js.map
