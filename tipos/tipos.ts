@@ -248,3 +248,33 @@ const produto = {
 }
 
 produto.validar('');
+
+
+//tipo null
+let altura = 12;
+
+/* se setar o strictNullChecks = false, 
+poderia utilizar null em tipos nao null */
+// altura = null; // => não aceita
+
+let alturaOpcional: null | number = 12;
+alturaOpcional = null;
+
+type Contato = {
+    nome: string;
+    tel1: string;
+    tel2: string | null;
+}
+
+const contato1: Contato = {
+    nome: 'Fulano',
+    tel1: '213242152',
+    tel2: null,
+}
+
+
+let ApenasNulo:null = null; //apenas nulo (não faz sentido)
+let poderSerNulo = null; //atribuido tipo any
+poderSerNulo = 12; // type number
+poderSerNulo = 'abc'; // type string
+
