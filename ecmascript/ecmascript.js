@@ -38,4 +38,13 @@ normalComThisEspecial();
 */
 var arrowComThis = function () { return console.log(_this); };
 arrowComThis();
+// parâmetro padrão
+function contagemRegressiva(inicio, fim) {
+    if (inicio === void 0) { inicio = 3; }
+    if (fim === void 0) { fim = inicio + 2; }
+    console.log('início', inicio);
+    console.log('fim', fim);
+}
+contagemRegressiva(3, 5);
+contagemRegressiva();
 //# sourceMappingURL=ecmascript.js.map

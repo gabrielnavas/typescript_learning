@@ -51,3 +51,14 @@ normalComThisEspecial();
 */
 const arrowComThis = () => console.log(this);
 arrowComThis();
+
+
+
+// parâmetro padrão
+function contagemRegressiva(inicio: number = 3, fim: number = inicio + 2) {
+    console.log('início', inicio);
+    console.log('fim', fim)
+}
+
+contagemRegressiva(3,5);
+contagemRegressiva();
