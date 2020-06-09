@@ -89,4 +89,8 @@ function tuplaParam() {
 }
 var stringTupled = tuplaParam('gabriel', true, 27);
 console.log(stringTupled);
+// destructuring (array)
+var caracteristicas = ['Motor Zetec 1.8', 2020];
+var motor = caracteristicas[0], ano = caracteristicas[1];
+console.log(motor, ano);
 //# sourceMappingURL=ecmascript.js.map

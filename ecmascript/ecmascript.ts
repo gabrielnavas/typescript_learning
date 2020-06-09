@@ -104,3 +104,10 @@ function tuplaParam(...args: [string, boolean, number]): string {
 const stringTupled = tuplaParam('gabriel', true, 27);
 console.log(stringTupled)
 
+
+// destructuring (array)
+const caracteristicas = ['Motor Zetec 1.8', 2020]
+
+const [motor, ano] = caracteristicas;
+
+console.log(motor, ano);
