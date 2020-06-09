@@ -79,4 +79,14 @@ function retornarArrayDinamico() {
 }
 var numerosDinamicos = retornarArrayDinamico(1, 2, 3, 4, 5, 6, 7, 10, 20, 30);
 console.log(numerosDinamicos);
+// parametros tupla Rest & Spread
+function tuplaParam() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    return "string => " + args[0] + " boolean => " + args[1] + " number => " + args[2];
+}
+var stringTupled = tuplaParam('gabriel', true, 27);
+console.log(stringTupled);
 //# sourceMappingURL=ecmascript.js.map

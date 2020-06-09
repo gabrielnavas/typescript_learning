@@ -95,4 +95,12 @@ const numerosDinamicos = retornarArrayDinamico(1, 2, 3, 4, 5, 6, 7, 10, 20, 30);
 console.log(numerosDinamicos);
 
 
+// parametros tupla Rest & Spread
+
+function tuplaParam(...args: [string, boolean, number]): string {
+    return `string => ${args[0]} boolean => ${args[1]} number => ${args[2]}`;
+}
+
+const stringTupled = tuplaParam('gabriel', true, 27);
+console.log(stringTupled)
 
