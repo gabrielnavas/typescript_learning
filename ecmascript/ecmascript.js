@@ -93,4 +93,16 @@ console.log(stringTupled);
 var caracteristicas = ['Motor Zetec 1.8', 2020];
 var motor = caracteristicas[0], ano = caracteristicas[1];
 console.log(motor, ano);
+// Descructuring (objeto)
+var item = {
+    nome: 'SSD 480GB',
+    preco: 200,
+    caracteristicas: {
+        importado: true
+    }
+};
+var Sou_Um_Alias = item.nome, importado = item.caracteristicas.importado;
+var preco = item.preco;
+console.log(Sou_Um_Alias); // 'SSD 480GB'
+console.log(importado); // 'true'
 //# sourceMappingURL=ecmascript.js.map

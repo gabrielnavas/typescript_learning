@@ -111,3 +111,19 @@ const caracteristicas = ['Motor Zetec 1.8', 2020]
 const [motor, ano] = caracteristicas;
 
 console.log(motor, ano);
+
+
+// Descructuring (objeto)
+const item = {
+    nome: 'SSD 480GB',
+    preco: 200,
+    caracteristicas: {
+        importado: true
+    }
+}
+
+const { nome: Sou_Um_Alias, caracteristicas: { importado } } = item;
+const { preco } = item;
+
+console.log(Sou_Um_Alias); // 'SSD 480GB'
+console.log(importado); // 'true'
