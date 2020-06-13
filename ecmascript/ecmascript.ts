@@ -113,7 +113,7 @@ const [motor, ano] = caracteristicas;
 console.log(motor, ano);
 
 
-// Descructuring (objeto)
+// destructuring (objeto)
 const item = {
     nome: 'SSD 480GB',
     preco: 200,
@@ -127,3 +127,19 @@ const { preco } = item;
 
 console.log(Sou_Um_Alias); // 'SSD 480GB'
 console.log(importado); // 'true'
+
+
+// template string
+const primeiroNome = 'gabriel';
+const segundoNome = "navas";
+const nomeCompleto = `
+    ${primeiroNome} ${segundoNome}
+    ${
+        primeiroNome.length + segundoNome.length > 0 ?
+            'nome grandao!!' :
+            'nome não definido' 
+    }
+`;
+console.log(nomeCompleto);
+
+const modoRuimDeLer = primeiroNome + ' ' + segundoNome;

@@ -93,7 +93,7 @@ console.log(stringTupled);
 var caracteristicas = ['Motor Zetec 1.8', 2020];
 var motor = caracteristicas[0], ano = caracteristicas[1];
 console.log(motor, ano);
-// Descructuring (objeto)
+// destructuring (objeto)
 var item = {
     nome: 'SSD 480GB',
     preco: 200,
@@ -105,4 +105,12 @@ var Sou_Um_Alias = item.nome, importado = item.caracteristicas.importado;
 var preco = item.preco;
 console.log(Sou_Um_Alias); // 'SSD 480GB'
 console.log(importado); // 'true'
+// template string
+var primeiroNome = 'gabriel';
+var segundoNome = "navas";
+var nomeCompleto = "\n    " + primeiroNome + " " + segundoNome + "\n    " + (primeiroNome.length + segundoNome.length > 0 ?
+    'nome grandao!!' :
+    'nome não definido') + "\n";
+console.log(nomeCompleto);
+var modoRuimDeLer = primeiroNome + ' ' + segundoNome;
 //# sourceMappingURL=ecmascript.js.map
