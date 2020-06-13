@@ -113,4 +113,32 @@ var nomeCompleto = "\n    " + primeiroNome + " " + segundoNome + "\n    " + (pri
     'nome não definido') + "\n";
 console.log(nomeCompleto);
 var modoRuimDeLer = primeiroNome + ' ' + segundoNome;
+// Exercicio 1
+var dobro = function (valor) {
+    return valor * 2;
+};
+console.log(dobro(10));
+// Exercicio 2
+var dizerOla = function (nome) {
+    if (nome === void 0) { nome = 'pessoa'; }
+    console.log("Ola, " + nome);
+};
+dizerOla();
+dizerOla("Anna");
+// Exercicio 3 menor valor
+var nums = [-3, 33, 38, 5];
+console.log(Math.min.apply(Math, nums));
+// Exercicio 4
+var array = [55, 20];
+nums.forEach(function (n) { return array.push(n); });
+//ou
+nums.push.apply(nums, nums);
+console.log(array);
+// Exercicio 5
+var notas = [8.5, 6.3, 9.4];
+var nota1 = notas[0], nota2 = notas[1], nota3 = notas[2];
+console.log(nota1, nota2, nota3);
+var cientista = { primeiroNome2: "Will", experiencia: 12 };
+var primeiroNome2 = cientista.primeiroNome2, experiencia = cientista.experiencia;
+console.log(primeiroNome, experiencia);
 //# sourceMappingURL=ecmascript.js.map

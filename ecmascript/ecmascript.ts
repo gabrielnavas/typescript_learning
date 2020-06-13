@@ -134,12 +134,56 @@ const primeiroNome = 'gabriel';
 const segundoNome = "navas";
 const nomeCompleto = `
     ${primeiroNome} ${segundoNome}
-    ${
-        primeiroNome.length + segundoNome.length > 0 ?
-            'nome grandao!!' :
-            'nome não definido' 
+    ${primeiroNome.length + segundoNome.length > 0 ?
+        'nome grandao!!' :
+        'nome não definido'
     }
 `;
 console.log(nomeCompleto);
 
 const modoRuimDeLer = primeiroNome + ' ' + segundoNome;
+
+
+
+
+// Exercicio 1
+const dobro = (valor: number) => {
+    return valor * 2;
+}
+console.log(dobro(10));
+
+// Exercicio 2
+const dizerOla = (nome: string = 'pessoa') => {
+    console.log(`Ola, ${nome}`);
+}
+
+dizerOla();
+dizerOla("Anna");
+
+// Exercicio 3 menor valor
+const nums: number[] = [-3, 33, 38, 5];
+console.log(Math.min(...nums));
+
+// Exercicio 4
+const array: number[] = [55, 20];
+nums.forEach(n => array.push(n));
+//ou
+nums.push(...nums);
+
+console.log(array);
+
+// Exercicio 5
+const notas: number[] = [8.5, 6.3, 9.4];
+const [nota1, nota2, nota3] = notas;
+console.log(nota1, nota2, nota3);
+
+// Exercicio 6
+
+type Pessoa2 {
+    primeiroNome2: string,
+    experiencia: number
+}
+
+const cientista: Pessoa2 = { primeiroNome2: "Will", experiencia: 12 }
+const { primeiroNome2, experiencia } = cientista;
+console.log(primeiroNome, experiencia)
