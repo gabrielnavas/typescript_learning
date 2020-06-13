@@ -187,3 +187,14 @@ type Pessoa2 {
 const cientista: Pessoa2 = { primeiroNome2: "Will", experiencia: 12 }
 const { primeiroNome2, experiencia } = cientista;
 console.log(primeiroNome, experiencia)
+
+
+// Callback
+
+function esperar3s() {
+    setTimeout(() => {
+        console.log('3s depois');
+    }, 3000);
+}
+
+esperar3s()

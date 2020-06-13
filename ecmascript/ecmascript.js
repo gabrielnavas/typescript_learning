@@ -141,4 +141,11 @@ console.log(nota1, nota2, nota3);
 var cientista = { primeiroNome2: "Will", experiencia: 12 };
 var primeiroNome2 = cientista.primeiroNome2, experiencia = cientista.experiencia;
 console.log(primeiroNome, experiencia);
+// Callback
+function esperar3s() {
+    setTimeout(function () {
+        console.log('3s depois');
+    }, 3000);
+}
+esperar3s();
 //# sourceMappingURL=ecmascript.js.map
