@@ -1,6 +1,6 @@
 "use strict";
-var canal = 'Gaveta';
-var inscritos = 45646;
+let canal = 'Gaveta';
+let inscritos = 45646;
 // canal = inscritos;
 // console.log(`Canal = ${canal}`);
 // function show(x, y) {

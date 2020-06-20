@@ -179,7 +179,7 @@ console.log(nota1, nota2, nota3);
 
 // Exercicio 6
 
-type Pessoa2 {
+type Pessoa2 = {
     primeiroNome2: string,
     experiencia: number
 }
@@ -189,12 +189,39 @@ const { primeiroNome2, experiencia } = cientista;
 console.log(primeiroNome, experiencia)
 
 
+
 // Callback
 
-function esperar3s() {
+function esperar3s(callback: (mensagem: string) => void) {
     setTimeout(() => {
-        console.log('3s depois');
+        callback('3s depois')
     }, 3000);
 }
 
-esperar3s()
+esperar3s((mensagem: string) => console.log(mensagem))
+console.log('antes da callback')
+
+// Promise
+
+function esperar3sPromise() {
+    return new Promise((resolve: any) => {
+        setTimeout(() => {
+            resolve('4s depois promise')
+        }, 4000);
+    })
+}
+
+esperar3sPromise()
+    .then(r => {
+        console.log(r)
+    })
+console.log('antes da promise')
+
+
+// várias chamas then (encadeamento)
+
+fetch('https://swapi.co/api/people/1')
+    .then(res => res.json())
+    .then(personagem => personagem.films)
+    .then(films => fetch(films[0]))
+    // .then(film1 => console.log(film1))
