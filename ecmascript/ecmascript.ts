@@ -220,13 +220,13 @@ console.log('antes da promise')
 
 // várias chamas then (encadeamento)
 
-fetch('https://swapi.co/api/people/1/')
-    .then(res => res.json())
-    .then(personagem => {
-        console.log(personagem)
-    })
-    // .then(films => console.log(films))
-    // .then(films => fetch(films[0]))
-    // .then(filme => filme.json())
-    // .then(filme => console.log(filme))
-    .catch(err => console.log(err))
+// fetch('https://swapi.co/api/people/1/')
+//     .then(res => res.json())
+//     .then(personagem => {
+//         console.log(personagem)
+//     })
+//     // .then(films => console.log(films))
+//     // .then(films => fetch(films[0]))
+//     // .then(filme => filme.json())
+//     // .then(filme => console.log(filme))
+//     .catch(err => console.log(err))
