@@ -204,7 +204,7 @@ console.log('antes da callback')
 // Promise
 
 function esperar3sPromise() {
-    return new Promise((resolve: any) => {
+    return new Promise((resolve: any, reject: any) => {
         setTimeout(() => {
             resolve('4s depois promise')
         }, 4000);
@@ -220,8 +220,13 @@ console.log('antes da promise')
 
 // várias chamas then (encadeamento)
 
-fetch('https://swapi.co/api/people/1')
+fetch('https://swapi.co/api/people/1/')
     .then(res => res.json())
-    .then(personagem => personagem.films)
-    .then(films => fetch(films[0]))
-    // .then(film1 => console.log(film1))
+    .then(personagem => {
+        console.log(personagem)
+    })
+    // .then(films => console.log(films))
+    // .then(films => fetch(films[0]))
+    // .then(filme => filme.json())
+    // .then(filme => console.log(filme))
+    .catch(err => console.log(err))
