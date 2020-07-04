@@ -128,4 +128,12 @@ p3.idade = 4;
 console.log(p3.idade);
 p3.idade = -10;
 console.log(p3.idade);
+// membros estáticos
+class Matematica {
+    static areaCirc(raio) {
+        return this.PI * raio * raio;
+    }
+}
+Matematica.PI = 3.1415;
+console.log(Matematica.areaCirc(5));
 //# sourceMappingURL=classes.js.map

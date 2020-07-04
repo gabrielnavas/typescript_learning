@@ -200,3 +200,17 @@ console.log(p3.idade)
 
 p3.idade = -10;
 console.log(p3.idade)
+
+
+
+// membros estáticos
+
+class Matematica {
+    static PI: number = 3.1415;
+
+    static areaCirc(raio: number): number {
+        return this.PI * raio * raio;
+    }
+}
+
+console.log(Matematica.areaCirc(5))
