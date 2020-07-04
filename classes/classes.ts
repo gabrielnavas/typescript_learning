@@ -69,9 +69,9 @@ class Produto {
     }
 
     fraseDePreco(): string {
-        const preco = this.calcularDesconto().toLocaleString('pt-BR')
+        const preco = this.calcularDesconto()
         const desconto = this.desconto*100;
-        
+
         return `Preço de R$${preco} com ${desconto}% de desconto.`
     }
 
@@ -81,10 +81,59 @@ class Produto {
 
     
 }
-const p1= new Produto('Gol 6 geração', 100000.45)
-const p2 = new Produto('Gol 6 geração', 100000.2, 0.20)
+const p1= new Produto('Gol 6 geração', 100000.454444)
+const p2 = new Produto('Gol 6 geração', 100000.2232366, 0.20)
 
 console.log(p1.valorComDesconto())
 console.log(p1.fraseDePreco())
 console.log(p2.valorComDesconto())
 console.log(p2.fraseDePreco())
+
+
+
+
+
+
+// modificadores de acesso 
+
+class Carro {
+    constructor(
+        private marca: string, 
+        private modelo: string, 
+        private velocidadeAtual: number = 0,
+        private velocidadeMaxima: number = 100
+    ) {}
+
+    
+    private setarVelocidade(velocidade: number): number {
+        const novaVelocidade = this.velocidadeAtual + velocidade;
+
+        if(novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima) {
+            this.velocidadeAtual = novaVelocidade;
+        }
+
+        return this.velocidadeAtual ;
+    }
+
+    public acelerar(): boolean {
+        const velocidadeAntiga = this.velocidadeAtual;
+        const acelerou = this.setarVelocidade(5) > velocidadeAntiga;
+
+        return acelerou;
+    }
+
+    public frear(): boolean {
+        const velocidadeAntiga = this.velocidadeAtual;
+        const freou = this.setarVelocidade(-5) < velocidadeAntiga;
+
+        return freou;
+    }
+}
+
+const car1 = new Carro('Ferrari', 'B500', 0, 200);
+
+for (let i = 0; i < 40; i++) {
+    console.log('Acelerou', car1.acelerar());
+}
+console.log('Acabou', car1.acelerar());
+console.log('Freiouuu', car1.frear());
