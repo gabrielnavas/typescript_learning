@@ -41,11 +41,21 @@ class Produto {
         this.desconto = desconto;
     }
     valorComDesconto() {
+        return this.calcularDesconto();
+    }
+    fraseDePreco() {
+        const preco = this.calcularDesconto().toLocaleString('pt-BR');
+        const desconto = this.desconto * 100;
+        return `Preço de R$${preco} com ${desconto}% de desconto.`;
+    }
+    calcularDesconto() {
         return this.preco - this.preco * this.desconto;
     }
 }
-const p1 = new Produto('Gol 6 geração', 100000);
-const p2 = new Produto('Gol 6 geração', 100000, 0.20);
+const p1 = new Produto('Gol 6 geração', 100000.45);
+const p2 = new Produto('Gol 6 geração', 100000.2, 0.20);
 console.log(p1.valorComDesconto());
+console.log(p1.fraseDePreco());
 console.log(p2.valorComDesconto());
+console.log(p2.fraseDePreco());
 //# sourceMappingURL=classes.js.map
