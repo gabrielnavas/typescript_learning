@@ -50,3 +50,26 @@ console.log(dataEsp.toString())
 const dataEsp2 = new DataEsperta;
 console.log(dataEsp2.toString())
 console.log(dataEsp2)
+
+
+
+
+//desafio do leo
+
+class Produto {
+
+    constructor(
+        private nome: string,
+        private preco: number,
+        private desconto: number = 0,
+    ) {}
+
+    valorComDesconto(): number {
+        return this.preco - this.preco * this.desconto;
+    }
+}
+const p1= new Produto('Gol 6 geração', 100000)
+const p2 = new Produto('Gol 6 geração', 100000, 0.20)
+
+console.log(p1.valorComDesconto())
+console.log(p2.valorComDesconto())
