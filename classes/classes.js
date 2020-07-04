@@ -92,6 +92,9 @@ console.log('Acabou', car1.acelerar());
 console.log('Freiouuu', car1.frear());
 // herança
 class Ferrari extends Carro {
+    constructor(modelo, velocidademaxima) {
+        super('Ferrari', modelo, 0, velocidademaxima);
+    }
     acelerar() {
         const velocidadeAntiga = this.velocidadeAtual;
         const freou = this.setarVelocidade(10) < velocidadeAntiga;
@@ -103,7 +106,26 @@ class Ferrari extends Carro {
         return freou;
     }
 }
-const f40 = new Ferrari('Ferrari', 'F40', 0, 324);
+const f40 = new Ferrari('F40', 324);
 console.log(f40.acelerar());
 console.log(f40.frear());
+// Getters & Setters
+class Pessoa3 {
+    constructor() {
+        this._idade = 0;
+    }
+    get idade() {
+        return this._idade;
+    }
+    set idade(idade) {
+        if (idade >= 0 && idade <= 120) {
+            this._idade = idade;
+        }
+    }
+}
+const p3 = new Pessoa3();
+p3.idade = 4;
+console.log(p3.idade);
+p3.idade = -10;
+console.log(p3.idade);
 //# sourceMappingURL=classes.js.map

@@ -3,7 +3,7 @@ class Data {
     public mes: number;
     private ano: number;
 
-    constructor(dia:number=1, mes:number=1, ano:number=1970) {
+    constructor(dia: number = 1, mes: number = 1, ano: number = 1970) {
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;
@@ -12,12 +12,12 @@ class Data {
     toString(): string {
         const dia = this.dia >= 10 ? this.dia : `0${this.dia}`
         const mes = this.mes >= 10 ? this.mes : `0${this.mes}`
-        
-        return `${dia}-${mes}-${this.ano}`;    
+
+        return `${dia}-${mes}-${this.ano}`;
     }
 }
 
-const data = new Data(2,3,1995);
+const data = new Data(2, 3, 1995);
 console.log(data.toString())
 
 
@@ -31,19 +31,19 @@ console.log(data2)
 class DataEsperta {
 
     constructor(
-        private dia:number=1, 
-        public mes:number=1, 
-        public ano:number=1970) {}
+        private dia: number = 1,
+        public mes: number = 1,
+        public ano: number = 1970) { }
 
     toString(): string {
         const dia = this.dia >= 10 ? this.dia : `0${this.dia}`
         const mes = this.mes >= 10 ? this.mes : `0${this.mes}`
-        
-        return `${dia}-${mes}-${this.ano}`;    
+
+        return `${dia}-${mes}-${this.ano}`;
     }
 }
 
-const dataEsp = new DataEsperta(2,3,1995);
+const dataEsp = new DataEsperta(2, 3, 1995);
 console.log(dataEsp.toString())
 
 
@@ -62,7 +62,7 @@ class Produto {
         private nome: string,
         private preco: number,
         private desconto: number = 0,
-    ) {}
+    ) { }
 
     valorComDesconto(): number {
         return this.calcularDesconto();
@@ -70,7 +70,7 @@ class Produto {
 
     fraseDePreco(): string {
         const preco = this.calcularDesconto()
-        const desconto = this.desconto*100;
+        const desconto = this.desconto * 100;
 
         return `Preço de R$${preco} com ${desconto}% de desconto.`
     }
@@ -79,9 +79,9 @@ class Produto {
         return this.preco - this.preco * this.desconto;
     }
 
-    
+
 }
-const p1= new Produto('Gol 6 geração', 100000.454444)
+const p1 = new Produto('Gol 6 geração', 100000.454444)
 const p2 = new Produto('Gol 6 geração', 100000.2232366, 0.20)
 
 console.log(p1.valorComDesconto())
@@ -98,21 +98,21 @@ console.log(p2.fraseDePreco())
 
 class Carro {
     constructor(
-        private marca: string, 
-        private modelo: string, 
+        private marca: string,
+        private modelo: string,
         protected velocidadeAtual: number = 0,
         protected velocidadeMaxima: number = 100
-    ) {}
+    ) { }
 
-    
+
     protected setarVelocidade(velocidade: number): number {
         const novaVelocidade = this.velocidadeAtual + velocidade;
 
-        if(novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima) {
+        if (novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima) {
             this.velocidadeAtual = novaVelocidade;
         }
 
-        return this.velocidadeAtual ;
+        return this.velocidadeAtual;
     }
 
     public acelerar(): boolean {
@@ -152,6 +152,9 @@ console.log('Freiouuu', car1.frear());
 
 class Ferrari extends Carro {
 
+    constructor(modelo: string, velocidademaxima: number) {
+        super('Ferrari', modelo, 0, velocidademaxima);
+    }
 
     acelerar() {
         const velocidadeAntiga = this.velocidadeAtual;
@@ -168,6 +171,32 @@ class Ferrari extends Carro {
     }
 }
 
-const f40 = new Ferrari('Ferrari', 'F40', 0, 324);
+const f40 = new Ferrari('F40', 324);
 console.log(f40.acelerar())
 console.log(f40.frear())
+
+
+
+// Getters & Setters
+
+class Pessoa3 {
+    private _idade: number = 0;
+
+
+    get idade(): number {
+        return this._idade;
+    }
+
+    set idade(idade: number) {
+        if (idade >= 0 && idade <= 120) {
+            this._idade = idade;
+        }
+    }
+}
+
+const p3 = new Pessoa3();
+p3.idade = 4;
+console.log(p3.idade)
+
+p3.idade = -10;
+console.log(p3.idade)
