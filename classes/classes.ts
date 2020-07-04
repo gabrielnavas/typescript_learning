@@ -28,6 +28,25 @@ console.log(data2)
 
 
 
+class DataEsperta {
+
+    constructor(
+        private dia:number=1, 
+        public mes:number=1, 
+        public ano:number=1970) {}
+
+    toString(): string {
+        const dia = this.dia >= 10 ? this.dia : `0${this.dia}`
+        const mes = this.mes >= 10 ? this.mes : `0${this.mes}`
+        
+        return `${dia}-${mes}-${this.ano}`;    
+    }
+}
+
+const dataEsp = new DataEsperta(2,3,1995);
+console.log(dataEsp.toString())
 
 
-
+const dataEsp2 = new DataEsperta;
+console.log(dataEsp2.toString())
+console.log(dataEsp2)
