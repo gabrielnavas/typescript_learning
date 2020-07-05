@@ -275,10 +275,16 @@ class Multiplicacao extends Calculo {
     }
 }
 
-const s = new Soma();
+const s: Soma = new Soma();
 s.executar(1,2,3);
 console.log(s.getResultado());
 
-const m = new Multiplicacao();
+const m:Multiplicacao = new Multiplicacao();
 m.executar(1,2,3);
 console.log(m.getResultado());
+
+
+// polimorfismo
+
+const calc: Calculo = new Soma();
+const calc2: Calculo = new Multiplicacao();

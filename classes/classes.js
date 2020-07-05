@@ -181,4 +181,7 @@ console.log(s.getResultado());
 const m = new Multiplicacao();
 m.executar(1, 2, 3);
 console.log(m.getResultado());
+// polimorfismo
+const calc = new Soma();
+const calc2 = new Multiplicacao();
 //# sourceMappingURL=classes.js.map
