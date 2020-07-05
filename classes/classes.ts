@@ -214,3 +214,71 @@ class Matematica {
 }
 
 console.log(Matematica.areaCirc(5))
+
+
+
+
+
+
+
+
+// classe abstrata
+
+abstract class Empresa{
+
+    constructor(protected _CNPJ: string) {}
+
+    abstract verificarCNPJ(): boolean;
+}
+
+class NavasLTDA extends Empresa {
+
+    constructor(protected _CNPJ: string) {
+        super(_CNPJ);
+    }
+
+    verificarCNPJ(): boolean {
+        return this._CNPJ.length > 0;
+    }
+
+    get CNPJ(): string {
+        return this._CNPJ;
+    }
+
+    set CNPJ(CNPJ: string) {
+        this._CNPJ = CNPJ;
+    }
+}
+
+abstract class Calculo {
+    protected resultado: number = 0;
+
+    abstract executar(...numeros: number[]): void;
+
+    getResultado(): number {
+        return this.resultado;
+    }
+}
+
+class Soma extends Calculo {
+
+    executar(...numeros: number[]): void {
+        this.resultado = numeros.reduce((t, v) => t+v);
+    }
+}
+
+
+class Multiplicacao extends Calculo {
+
+    executar(...numeros: number[]): void {
+        this.resultado = numeros.reduce((t, v) => t*v);
+    }
+}
+
+const s = new Soma();
+s.executar(1,2,3);
+console.log(s.getResultado());
+
+const m = new Multiplicacao();
+m.executar(1,2,3);
+console.log(m.getResultado());

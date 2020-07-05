@@ -136,4 +136,49 @@ class Matematica {
 }
 Matematica.PI = 3.1415;
 console.log(Matematica.areaCirc(5));
+// classe abstrata
+class Empresa {
+    constructor(_CNPJ) {
+        this._CNPJ = _CNPJ;
+    }
+}
+class NavasLTDA extends Empresa {
+    constructor(_CNPJ) {
+        super(_CNPJ);
+        this._CNPJ = _CNPJ;
+    }
+    verificarCNPJ() {
+        return this._CNPJ.length > 0;
+    }
+    get CNPJ() {
+        return this._CNPJ;
+    }
+    set CNPJ(CNPJ) {
+        this._CNPJ = CNPJ;
+    }
+}
+class Calculo {
+    constructor() {
+        this.resultado = 0;
+    }
+    getResultado() {
+        return this.resultado;
+    }
+}
+class Soma extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((t, v) => t + v);
+    }
+}
+class Multiplicacao extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((t, v) => t * v);
+    }
+}
+const s = new Soma();
+s.executar(1, 2, 3);
+console.log(s.getResultado());
+const m = new Multiplicacao();
+m.executar(1, 2, 3);
+console.log(m.getResultado());
 //# sourceMappingURL=classes.js.map
