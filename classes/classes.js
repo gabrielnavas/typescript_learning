@@ -184,4 +184,17 @@ console.log(m.getResultado());
 // polimorfismo
 const calc = new Soma();
 const calc2 = new Multiplicacao();
+// contrutor privado e singleton
+class Unico {
+    constructor() { }
+    static getInstance() {
+        return Unico._instance || (this._instance = new Unico());
+    }
+    agora() {
+        return new Date();
+    }
+}
+// const errado = new Unico()
+console.log(Unico.getInstance());
+console.log(Unico.getInstance().agora());
 //# sourceMappingURL=classes.js.map

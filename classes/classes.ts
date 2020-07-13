@@ -224,9 +224,9 @@ console.log(Matematica.areaCirc(5))
 
 // classe abstrata
 
-abstract class Empresa{
+abstract class Empresa {
 
-    constructor(protected _CNPJ: string) {}
+    constructor(protected _CNPJ: string) { }
 
     abstract verificarCNPJ(): boolean;
 }
@@ -263,7 +263,7 @@ abstract class Calculo {
 class Soma extends Calculo {
 
     executar(...numeros: number[]): void {
-        this.resultado = numeros.reduce((t, v) => t+v);
+        this.resultado = numeros.reduce((t, v) => t + v);
     }
 }
 
@@ -271,16 +271,16 @@ class Soma extends Calculo {
 class Multiplicacao extends Calculo {
 
     executar(...numeros: number[]): void {
-        this.resultado = numeros.reduce((t, v) => t*v);
+        this.resultado = numeros.reduce((t, v) => t * v);
     }
 }
 
 const s: Soma = new Soma();
-s.executar(1,2,3);
+s.executar(1, 2, 3);
 console.log(s.getResultado());
 
-const m:Multiplicacao = new Multiplicacao();
-m.executar(1,2,3);
+const m: Multiplicacao = new Multiplicacao();
+m.executar(1, 2, 3);
 console.log(m.getResultado());
 
 
@@ -288,3 +288,23 @@ console.log(m.getResultado());
 
 const calc: Calculo = new Soma();
 const calc2: Calculo = new Multiplicacao();
+
+
+// contrutor privado e singleton
+
+class Unico {
+    private static _instance: Unico;
+    private constructor() { }
+
+    static getInstance(): Unico {
+        return Unico._instance || (this._instance = new Unico());
+    }
+
+    agora() {
+        return new Date();
+    }
+}
+
+// const errado = new Unico()
+console.log(Unico.getInstance());
+console.log(Unico.getInstance().agora());
