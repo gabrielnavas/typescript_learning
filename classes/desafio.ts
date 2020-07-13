@@ -77,7 +77,7 @@ class Estagiario {
 }
 
 const estagiario = new Estagiario('Gab');
-
+ 
 console.log(estagiario.primeiroNome)
 estagiario.primeiroNome = 'Le'
 console.log(estagiario.primeiroNome)
