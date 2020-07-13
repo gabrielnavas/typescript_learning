@@ -294,6 +294,7 @@ const calc2: Calculo = new Multiplicacao();
 
 class Unico {
     private static _instance: Unico;
+ 
     private constructor() { }
 
     static getInstance(): Unico {
@@ -308,3 +309,20 @@ class Unico {
 // const errado = new Unico()
 console.log(Unico.getInstance());
 console.log(Unico.getInstance().agora());
+
+
+
+
+// Somente Leitura
+class Aviao {
+    public readonly modelo: string;
+
+    constructor(modelo: string, public readonly prefixo: string) {
+        this.modelo = modelo;
+    } 
+}
+
+const turboHelice = new Aviao('Tu-114', 'PT-ABC');
+// turboHelice.modelo = 'Outro Modelo'; //nao da pra alterar.
+// turboHelice.prefixo = 'Outro Prefixo';
+console.log(turboHelice)

@@ -197,4 +197,15 @@ class Unico {
 // const errado = new Unico()
 console.log(Unico.getInstance());
 console.log(Unico.getInstance().agora());
+// Somente Leitura
+class Aviao {
+    constructor(modelo, prefixo) {
+        this.prefixo = prefixo;
+        this.modelo = modelo;
+    }
+}
+const turboHelice = new Aviao('Tu-114', 'PT-ABC');
+// turboHelice.modelo = 'Outro Modelo'; //nao da pra alterar.
+// turboHelice.prefixo = 'Outro Prefixo';
+console.log(turboHelice);
 //# sourceMappingURL=classes.js.map
