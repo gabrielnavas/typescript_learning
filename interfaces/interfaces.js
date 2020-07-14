@@ -41,4 +41,23 @@ potencia = function (base, expoente) {
     return Array(expoente).fill(base).reduce((total, value) => total * value);
 };
 console.log(potencia(2, 6));
+class RealA {
+    a() { }
+    ;
+}
+class RealAB {
+    a() { }
+    ;
+    b() { }
+    ;
+}
+class RealABC {
+    a() { }
+    b() { }
+    c() { }
+}
+class AbstrataABD {
+    a() { }
+    b() { }
+}
 //# sourceMappingURL=interfaces.js.map
