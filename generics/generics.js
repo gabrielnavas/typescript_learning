@@ -34,4 +34,17 @@ const alunos = [
 imprimir(alunos);
 const charmarEcho = echoMelhorado;
 console.log(charmarEcho('Alguma coisa'));
+// Class com Generics
+class OperacaoBinaria {
+    constructor(operando1, oeprando2) {
+        this.operando1 = operando1;
+        this.oeprando2 = oeprando2;
+    }
+    executar() {
+        return this.operando1 + this.oeprando2;
+    }
+}
+console.log(new OperacaoBinaria('Bom dia', 'dia').executar());
+console.log(new OperacaoBinaria(3, 7).executar());
+console.log(new OperacaoBinaria(3, ' Opa').executar());
 //# sourceMappingURL=generics.js.map
