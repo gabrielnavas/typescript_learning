@@ -2,6 +2,6 @@
 ///<reference path="geometriaRec.ts" />
 
 
-const PI = 3.14;
+// const PI = 3.14;
 
-console.log(Geometria.Area.circuferencia(3));
+console.log(GeometriaCirc.Area.circuferencia(3));

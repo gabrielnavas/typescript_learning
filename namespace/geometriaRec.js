@@ -1,6 +1,6 @@
 "use strict";
-var Geometria;
-(function (Geometria) {
+var GeometriaRec;
+(function (GeometriaRec) {
     let Area;
     (function (Area) {
         const PI = 3.14;
@@ -12,6 +12,6 @@ var Geometria;
             return base * altura;
         }
         Area.areaRetangulo = areaRetangulo;
-    })(Area = Geometria.Area || (Geometria.Area = {}));
-})(Geometria || (Geometria = {}));
+    })(Area = GeometriaRec.Area || (GeometriaRec.Area = {}));
+})(GeometriaRec || (GeometriaRec = {}));
 //# sourceMappingURL=geometriaRec.js.map

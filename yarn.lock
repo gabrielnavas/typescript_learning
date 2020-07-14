@@ -1106,6 +1106,11 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
+systemjs@0.21.5:
+  version "0.21.5"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.21.5.tgz#2fcef4edfe744003da4787f3f3d45d73f94462d2"
+  integrity sha512-GWzZhN/x7Fsae2CYkz2GF7OgOS+YDgKulcgd5L1kTogZHMKDrPx5T8zI8I0y5RoU9Dx78Z7j1XMfuFa1thD84A==
+
 through@2, through@~2.3, through@~2.3.1:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"

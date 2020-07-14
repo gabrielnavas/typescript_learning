@@ -1,13 +1,17 @@
 "use strict";
-// namespace Geometria {
-//     export namespace Area {
-//         const PI = 3.14;
-//         export function circuferencia(raio: number): number {
-//             return PI * Math.pow(raio, 2);
-//         }
-//         export function areaRetangulo(base: number, altura: number): number {
-//             return base * altura;
-//         }
-//     }
-// }
+var GeometriaCirc;
+(function (GeometriaCirc) {
+    let Area;
+    (function (Area) {
+        const PI = 3.14;
+        function circuferencia(raio) {
+            return PI * Math.pow(raio, 2);
+        }
+        Area.circuferencia = circuferencia;
+        function areaRetangulo(base, altura) {
+            return base * altura;
+        }
+        Area.areaRetangulo = areaRetangulo;
+    })(Area = GeometriaCirc.Area || (GeometriaCirc.Area = {}));
+})(GeometriaCirc || (GeometriaCirc = {}));
 //# sourceMappingURL=geometriaCirc.js.map

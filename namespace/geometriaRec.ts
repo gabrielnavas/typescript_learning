@@ -1,4 +1,4 @@
-namespace Geometria {
+namespace GeometriaRec {
     export namespace Area {
         const PI = 3.14;
 

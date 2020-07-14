@@ -5,10 +5,10 @@
   "scripts": {
     "start:live-server": "live-server",
     "start:tsc": "tsc -w"
-
   },
   "dependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "systemjs": "0.21.5"
   },
   "repository": "https://github.com/gabrielnavas/typescript_learning",
   "author": "navas <gabrielnavas@email.com>",
