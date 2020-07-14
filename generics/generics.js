@@ -32,4 +32,6 @@ const alunos = [
     { nome: 'Gab3', idade: 34 },
 ];
 imprimir(alunos);
+const charmarEcho = echoMelhorado;
+console.log(charmarEcho('Alguma coisa'));
 //# sourceMappingURL=generics.js.map

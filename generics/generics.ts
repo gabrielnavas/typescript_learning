@@ -47,3 +47,10 @@ const alunos = [
 ];
 
 imprimir<Aluno>(alunos)
+
+
+
+// Tipo Genérico
+type Echo = <T>(data: T) => T
+const charmarEcho: Echo = echoMelhorado;
+console.log(charmarEcho<string>('Alguma coisa'))
