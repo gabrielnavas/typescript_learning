@@ -20,4 +20,16 @@ const avaliacoes = [10, 9.3, 7.7];
 // avaliacoes.push('43');
 avaliacoes.push(43);
 console.log(avaliacoes);
+// Array
+function imprimir(args) {
+    args.forEach(elem => console.log(elem));
+}
+imprimir([1, 2, 3, 4, 5]);
+imprimir(['1', '2', '3', '4', '5']);
+const alunos = [
+    { nome: 'Gab1', idade: 32 },
+    { nome: 'Gab2', idade: 31 },
+    { nome: 'Gab3', idade: 34 },
+];
+imprimir(alunos);
 //# sourceMappingURL=generics.js.map
