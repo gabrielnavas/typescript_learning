@@ -31,4 +31,14 @@ const meuCliente = new Cliente();
 meuCliente.nome = 'Han';
 meuCliente.saudar('Solo');
 console.log(meuCliente.ultimaCompra);
+let potencia;
+potencia = function (base, expoente) {
+    //opção 1
+    // return Math.pow(base, expoente);
+    //opção 2
+    // return base ** expoente
+    //opção 3
+    return Array(expoente).fill(base).reduce((total, value) => total * value);
+};
+console.log(potencia(2, 6));
 //# sourceMappingURL=interfaces.js.map

@@ -1,6 +1,6 @@
 interface Humano {
     nome: string,
-    idade? : number,
+    idade?: number,
     [prop: string]: any,
     saudar(sobrenome: string): void;
 }
@@ -43,3 +43,25 @@ const meuCliente = new Cliente();
 meuCliente.nome = 'Han';
 meuCliente.saudar('Solo');
 console.log(meuCliente.ultimaCompra);
+
+
+
+// interface Função
+interface FuncaoCalculo {
+    (a: number, b: number): number;
+}
+
+let potencia: FuncaoCalculo;
+potencia = function (base: number, expoente: number): number {
+    
+    //opção 1
+    // return Math.pow(base, expoente);
+
+    //opção 2
+    // return base ** expoente
+
+    //opção 3
+    return Array(expoente).fill(base).reduce((total, value) => total * value);
+}
+
+console.log(potencia(2, 6));
