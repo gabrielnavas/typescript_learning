@@ -1,7 +1,7 @@
 class Data {
-    private dia: number;
+    public dia: number;
     public mes: number;
-    private ano: number;
+    public ano: number;
 
     constructor(dia: number = 1, mes: number = 1, ano: number = 1970) {
         this.dia = dia;

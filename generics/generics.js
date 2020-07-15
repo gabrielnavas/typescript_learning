@@ -45,11 +45,23 @@ class SomaBinaria extends OperacaoBinaria {
     executar() {
         return this.operando1 + this.operando2;
     }
-    log() {
-        return `Esse valor da: ${this.operando1 + this.operando2}`;
-    }
 }
 const somaB = new SomaBinaria(1, 2);
 console.log(somaB.executar());
-console.log(somaB.log());
+class DiferencaEntreDatas extends OperacaoBinaria {
+    getTime(data) {
+        let { dia, mes, ano } = data;
+        return new Date(`${mes}/${dia}/${ano}`).getTime();
+    }
+    executar() {
+        const t1 = this.getTime(this.operando1);
+        const t2 = this.getTime(this.operando2);
+        const diferenca = Math.abs(t1 - t2);
+        const dia = 1000 * 60 * 60 * 24;
+        return `${Math.ceil(diferenca / dia)} dias(s)`;
+    }
+}
+const data_1 = new Data(1, 2, 2020);
+const data_2 = new Data(2, 2, 2020);
+console.log(new DiferencaEntreDatas(data_1, data_2).executar());
 //# sourceMappingURL=generics.js.map
