@@ -99,4 +99,23 @@ console.log('próximo', fila.proximo());
 console.log('próximo', fila.proximo());
 console.log('próximo', fila.proximo());
 fila.imprimir();
+// Restrições (Constraints) //
+class ClassA {
+    constructor() {
+        this.atributo = 1;
+    }
+}
+class ClassB extends ClassA {
+    constructor() {
+        super(...arguments);
+        this.atributo = 1;
+    }
+}
+class ClassC {
+    constructor(atributo) {
+        this.atributo = atributo;
+    }
+}
+const objC = new ClassC(new ClassA());
+console.log(objC.atributo);
 //# sourceMappingURL=generics.js.map

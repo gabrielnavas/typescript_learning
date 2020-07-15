@@ -148,3 +148,28 @@ console.log('próximo', fila.proximo());
 console.log('próximo', fila.proximo());
 console.log('próximo', fila.proximo());
 fila.imprimir();
+
+
+
+
+
+
+// Restrições (Constraints) //
+class ClassA {
+    atributo: number = 1;
+}
+
+class ClassB extends ClassA {
+    atributo: number = 1;
+}
+
+class ClassC<T extends ClassB> {
+    atributo: T;
+
+    constructor(atributo: T) {
+        this.atributo = atributo;
+    }
+} 
+
+const objC = new ClassC<ClassA>(new ClassA());
+console.log(objC.atributo);
