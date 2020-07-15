@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 function logarClass(construtor) {
     console.log(typeof construtor);
 }
@@ -93,7 +96,8 @@ __decorate([
     naoNegativo
 ], ContaCorrente.prototype, "_saldo", void 0);
 __decorate([
-    congelar
+    congelar,
+    __param(0, paramInfo)
 ], ContaCorrente.prototype, "sacar", null);
 __decorate([
     congelar
@@ -129,5 +133,11 @@ function naoNegativo(alvo, nomePropriedade) {
             }
         }
     });
+}
+// Decorator para parametro
+function paramInfo(alvo, nomeMetodo, indiceParam) {
+    console.log(`Alvo: ${alvo}`);
+    console.log(`Método: ${nomeMetodo}`);
+    console.log(`Índice: ${indiceParam}`);
 }
 //# sourceMappingURL=decorators.js.map
