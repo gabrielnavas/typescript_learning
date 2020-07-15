@@ -48,4 +48,16 @@ function imprimivel(construtor) {
 // (<any>new Eletrodomestico()).imprimir();
 const eletro = new Eletrodomestico();
 eletro.imprimir && eletro.imprimir();
+// Desafio Decorator perfilAdmin
+const usuarioLogado = {
+    nome: 'Guilherme Filho',
+    email: 'guigui@gmail.com',
+    admin: false
+};
+class MudancaAdministrativa {
+    critico() {
+        console.log('Algo crítico foi alterado!');
+    }
+}
+new MudancaAdministrativa().critico();
 //# sourceMappingURL=decorators.js.map

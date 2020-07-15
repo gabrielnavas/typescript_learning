@@ -51,7 +51,7 @@ class Eletrodomestico {
 
 
 function imprimivel(construtor: Function) {
-    construtor.prototype.imprimir = function() {
+    construtor.prototype.imprimir = function () {
         console.log(this);
     }
 }
@@ -59,3 +59,20 @@ function imprimivel(construtor: Function) {
 // (<any>new Eletrodomestico()).imprimir();
 const eletro = new Eletrodomestico();
 eletro.imprimir && eletro.imprimir();
+
+
+
+// Desafio Decorator perfilAdmin
+const usuarioLogado = {
+    nome: 'Guilherme Filho',
+    email: 'guigui@gmail.com',
+    admin: false
+}
+
+class MudancaAdministrativa {
+    critico() {
+        console.log('Algo crítico foi alterado!')
+    }
+}
+
+new MudancaAdministrativa().critico()
