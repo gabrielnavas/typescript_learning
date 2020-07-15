@@ -118,4 +118,55 @@ class ClassC {
 }
 const objC = new ClassC(new ClassA());
 console.log(objC.atributo);
+// Desafio Mapa
+// Array de Objetos (Chave/Valor) -> itens
+// Métodos: obter(Chave), colocar({C, V})
+// Limpar(), imprimir()
+class Mapa {
+    constructor(mapa = []) {
+        this._mapa = mapa;
+    }
+    colocar(elem) {
+        const containsIndex = this._mapa.find(elemMap => elemMap.chave === elem.chave);
+        containsIndex !== undefined ?
+            this._mapa[containsIndex.chave - 1].valor = elem.valor :
+            this._mapa.push(elem);
+    }
+    obter(chave) {
+        const containsIndex = this._mapa.find(elemMap => elemMap.chave === chave);
+        return containsIndex !== undefined ?
+            this._mapa[containsIndex.chave - 1] : null;
+    }
+    remover(chave) {
+        const indexMap = this._mapa.findIndex(elemMap => elemMap.chave === chave);
+        if (indexMap === -1) {
+            return false;
+        }
+        this._mapa.splice(indexMap, 1);
+        return true;
+    }
+    limpar() {
+        while (this._mapa.length > 0) {
+            this._mapa.shift();
+        }
+    }
+    imprimir() {
+        console.log(this._mapa);
+    }
+}
+const mapa = new Mapa();
+mapa.colocar({ chave: 1, valor: 'Gabriel' });
+mapa.colocar({ chave: 2, valor: 'Navas' });
+mapa.colocar({ chave: 3, valor: 'João' });
+mapa.colocar({ chave: 3, valor: 'Joaquim' });
+mapa.imprimir();
+console.log('obter item 1', mapa.obter(1));
+console.log('obter item 2', mapa.obter(2));
+console.log('obter item 3', mapa.obter(3));
+console.log('remover item 2');
+mapa.remover(2);
+mapa.imprimir();
+console.log('limpar tudo');
+mapa.limpar();
+mapa.imprimir();
 //# sourceMappingURL=generics.js.map
