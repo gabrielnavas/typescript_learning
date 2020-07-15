@@ -87,9 +87,54 @@ function perfilAdmin<T extends Construtor>(construtor: T) {
     return class extends construtor {
         constructor(...args: any[]) {
             super(...args);
-            if(!usuarioLogado || !usuarioLogado.admin) {
+            if (!usuarioLogado || !usuarioLogado.admin) {
                 throw new Error('Sem permissao');
             }
         }
     }
+}
+
+
+
+// Decorator Método
+class ContaCorrente {
+    private _saldo: number;
+
+    constructor(saldo: number) {
+        this._saldo = saldo;
+    }
+
+    @congelar
+    sacar(valor: number) {
+        if (valor <= this._saldo) {
+            this._saldo -= valor;
+            return true;
+        }
+
+        return false;
+    }
+
+    @congelar
+    getSaldo(): number {
+        return this._saldo
+    }
+}
+
+const cc = new ContaCorrente(10248.57)
+cc.sacar(5000)
+console.log(cc.getSaldo());
+
+cc.getSaldo = function () {
+    return this['_saldo'] + 7000;
+}
+
+console.log(cc.getSaldo());
+
+// Decorator para método
+// Object.freeze()
+function congelar(alvo: any, nomeMetodo: string,
+    descritor: PropertyDescriptor) {
+    console.log('alvo', alvo);
+    console.log('nome metodo', nomeMetodo);
+    descritor.writable = false;
 }

@@ -73,4 +73,40 @@ function perfilAdmin(construtor) {
         }
     };
 }
+// Decorator Método
+class ContaCorrente {
+    constructor(saldo) {
+        this._saldo = saldo;
+    }
+    sacar(valor) {
+        if (valor <= this._saldo) {
+            this._saldo -= valor;
+            return true;
+        }
+        return false;
+    }
+    getSaldo() {
+        return this._saldo;
+    }
+}
+__decorate([
+    congelar
+], ContaCorrente.prototype, "sacar", null);
+__decorate([
+    congelar
+], ContaCorrente.prototype, "getSaldo", null);
+const cc = new ContaCorrente(10248.57);
+cc.sacar(5000);
+console.log(cc.getSaldo());
+cc.getSaldo = function () {
+    return this['_saldo'] + 7000;
+};
+console.log(cc.getSaldo());
+// Decorator para método
+// Object.freeze()
+function congelar(alvo, nomeMetodo, descritor) {
+    console.log('alvo', alvo);
+    console.log('nome metodo', nomeMetodo);
+    descritor.writable = false;
+}
 //# sourceMappingURL=decorators.js.map
