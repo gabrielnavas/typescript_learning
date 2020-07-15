@@ -1,12 +1,3 @@
-// @logarClass
-// @logarClasseSe(false)
-@factoryDecorator({ a: 'Olá ', b: 2 })
-class Eletrodomestico {
-
-    constructor() {
-        console.log('novo....')
-    }
-}
 
 function logarClass(construtor: Function) {
     console.log(typeof construtor);
@@ -24,3 +15,33 @@ function factoryDecorator(obj: { a: string, b: number }) {
         console.log(obj.a + ' ' + obj.b);
     }
 }
+
+// @logarClass
+// @logarClasseSe(false)
+// @factoryDecorator({ a: 'Olá ', b: 2 })
+@logarObjeto
+class Eletrodomestico {
+
+    constructor() {
+        console.log('novo....')
+    }
+}
+
+
+type Construtor = { new(...args: any[]): {} }
+
+
+function logarObjeto(construtor: Construtor) {
+    console.log('Carregado...')
+    return class extends construtor {
+        constructor(...args: any[]) {
+            console.log('Antes...')
+            super(args);
+            console.log('Depois...')
+        }
+    }
+}
+
+new Eletrodomestico();
+new Eletrodomestico();
+new Eletrodomestico();
