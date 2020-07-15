@@ -169,4 +169,39 @@ mapa.imprimir();
 console.log('limpar tudo');
 mapa.limpar();
 mapa.imprimir();
+class MapaLeo {
+    constructor() {
+        this.itens = new Array();
+    }
+    obter(chave) {
+        const resultado = this.itens
+            .filter(i => i.chave === chave);
+        return resultado ? resultado[0] : null;
+    }
+    colocar(par) {
+        const encontrado = this.obter(par.chave);
+        if (encontrado) {
+            encontrado.valor = par.valor;
+        }
+        else {
+            this.itens.push(par);
+        }
+    }
+    limpar() {
+        this.itens = new Array();
+    }
+    imprimir() {
+        console.log(this.itens);
+    }
+}
+console.log('implementações do Leo');
+const mapaLeo = new MapaLeo();
+mapaLeo.colocar({ chave: 1, valor: 'Pedro' });
+mapaLeo.colocar({ chave: 2, valor: 'Rebeca' });
+mapaLeo.colocar({ chave: 3, valor: 'Maria' });
+mapaLeo.colocar({ chave: 1, valor: 'Gustavo' });
+console.log(mapaLeo.obter(2));
+mapaLeo.imprimir();
+mapaLeo.limpar();
+mapaLeo.imprimir();
 //# sourceMappingURL=generics.js.map

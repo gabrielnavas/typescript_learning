@@ -257,3 +257,59 @@ mapa.imprimir();
 console.log('limpar tudo');
 mapa.limpar();
 mapa.imprimir();
+
+
+
+
+
+// Desafio Mapa Implementação do Leo
+
+type Par<C, V> = { chave: C, valor: V};
+
+class MapaLeo<C, V> {
+
+    itens: Array<Par<C, V>>;
+
+    constructor() {
+        this.itens = new Array<Par<C, V>>();
+    }
+
+    obter(chave: C): Par<C, V> | null {
+        const resultado = this.itens
+            .filter(i => i.chave === chave);
+
+        return resultado ? resultado[0] : null;
+    }
+
+    colocar(par: Par<C, V>): void {
+        const encontrado = this.obter(par.chave)
+
+        if(encontrado) {
+            encontrado.valor = par.valor;
+        }
+        else {
+            this.itens.push(par)
+        }
+    }
+
+    limpar() {
+        this.itens = new Array<Par<C, V>>();
+    }
+
+    imprimir() {
+        console.log(this.itens);
+    }
+}
+
+console.log('implementações do Leo');
+
+const mapaLeo = new MapaLeo<number, string>()
+mapaLeo.colocar({ chave: 1, valor: 'Pedro' })
+mapaLeo.colocar({ chave: 2, valor: 'Rebeca' })
+mapaLeo.colocar({ chave: 3, valor: 'Maria' })
+mapaLeo.colocar({ chave: 1, valor: 'Gustavo' })
+ 
+console.log(mapaLeo.obter(2))
+mapaLeo.imprimir()
+mapaLeo.limpar()
+mapaLeo.imprimir()
