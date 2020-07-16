@@ -1,14 +1,13 @@
-const { series, parallel, src, dest } = require('gulp');
-const del = require('del');
-const boewserify = require('browserify');
-const source = require('vinyl-source-stream');
-const tsify = require('tsify') 
-
+const { series, parallel, src, dest } = require('gulp')
+const del = require('del')
+const browserify = require('browserify')
+const source = require('vinyl-source-stream')
+const tsify = require('tsify')
+const uglify = require('gulp-uglify')
+const rename = require('gulp-rename')
 
 function limparDist() {
-    return del([
-        'dist',
-    ])
+    return del(['dist'])
 }
 
 function copiarHTML(cb) {
@@ -17,7 +16,7 @@ function copiarHTML(cb) {
 }
 
 function gerarJS(cb) {
-    return boewserify({
+    return browserify({
         basedir: '.',
         entries: ['src/main.ts']
     })
@@ -27,11 +26,15 @@ function gerarJS(cb) {
         .pipe(dest('dist'))
 }
 
-exports.default = series (
+function gerarJSProducao() {
+    return src('dist/app.js')
+        .pipe(rename('app.min.js'))
+        .pipe(uglify())
+        .pipe(dest('dist'))
+}
+
+exports.default = series(
     limparDist,
-    parallel(gerarJS, copiarHTML)
+    parallel(gerarJS, copiarHTML),
+    gerarJSProducao
 )
-
-
-
-
