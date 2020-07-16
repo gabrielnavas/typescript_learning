@@ -2,5 +2,18 @@
   "name": "integracao_gulp",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "browserfy": "^1.0.0",
+    "browserify": "^16.5.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "tsify": "^4.0.2",
+    "typescript": "^3.9.6",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {}
 }
